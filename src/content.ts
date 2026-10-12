@@ -8,8 +8,8 @@
  *   it as a launched product, and do not claim users, traction, or demand.
  *   The live link opens a view-only copy (localStorage demo in the
  *   visitor's own browser), not onboarding.
- * - Dhyaan repo is NOT public (github.com/rhsunasara429/Dhyaan → 404,
- *   verified 2026-10-12). repoUrl stays null until a public repo exists.
+ * - Dhyaan repo is public: https://github.com/rhsunasara429/Dhyaan
+ *   (verified reachable 2026-10-12). repoUrl links to it.
  * - Live Dhyaan deployment verified reachable 2026-10-12:
  *   https://dhyaan.rhsunasara429.workers.dev (JS SPA + web manifest).
  * - Each section adds something new. Do not restate the same idea twice.
@@ -80,7 +80,7 @@ export interface Project {
   stack: string[];
   decisions: string[];
   lessons: string[];
-  /** Null while the repo is not public (Dhyaan → 404, verified 2026-10-12). */
+  /** Public repo URL. Null only if no public repo exists. */
   repoUrl: string | null;
   /** Live deployment — verified reachable 2026-10-12. Null until one exists. */
   liveUrl: string | null;
@@ -114,7 +114,7 @@ export const projects: Project[] = [
       "Features need clearly defined expected behaviour before asking for them; vague requests came back vague.",
       "Small changes are easier to validate — one fix at a time kept testing manageable.",
     ],
-    repoUrl: null,
+    repoUrl: "https://github.com/rhsunasara429/Dhyaan",
     liveUrl: "https://dhyaan.rhsunasara429.workers.dev",
   },
 ];
