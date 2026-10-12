@@ -4,10 +4,7 @@ import Hero from "./components/Hero";
 import Work from "./components/Work";
 import Manifesto from "./components/Manifesto";
 import About from "./components/About";
-import Journey from "./components/Journey";
-import Explorations from "./components/Explorations";
 import Now from "./components/Now";
-import Vision from "./components/Vision";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
@@ -76,7 +73,7 @@ function App() {
             <Work />
           </div>
         </Reveal>
-        <Reveal as="section" id="bet" className="section">
+        <Reveal as="section" id="principle" className="section">
           <div className="wrap">
             <Manifesto />
           </div>
@@ -86,24 +83,9 @@ function App() {
             <About />
           </div>
         </Reveal>
-        <Reveal as="section" id="journey" className="section">
-          <div className="wrap narrow">
-            <Journey />
-          </div>
-        </Reveal>
-        <Reveal as="section" id="explorations" className="section">
-          <div className="wrap">
-            <Explorations />
-          </div>
-        </Reveal>
         <Reveal as="section" id="now" className="section">
           <div className="wrap">
             <Now />
-          </div>
-        </Reveal>
-        <Reveal as="section" id="vision" className="section">
-          <div className="wrap">
-            <Vision />
           </div>
         </Reveal>
         <Reveal as="section" id="contact" className="section contact-section">

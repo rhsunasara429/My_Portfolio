@@ -1,6 +1,5 @@
 import { useState, type PointerEvent } from "react";
 import { projects } from "../content";
-import Tilt from "./Tilt";
 
 /** Plain-English labels for the tech terms. Real term kept as a tooltip. */
 const STACK_PLAIN: Record<string, string> = {
@@ -12,15 +11,9 @@ const STACK_PLAIN: Record<string, string> = {
   PWA: "Installable phone app",
 };
 
-const TRY_STEPS = [
-  "Open “See my live build” above — no sign-up, it just opens my personal tool.",
-  "Add one task the way I do, e.g. “Revise chapter 3”.",
-  "Tick it off. That's the flow I use daily — you're just looking over my shoulder.",
-] as const;
-
 /**
- * Case study written for newcomers, not developers:
- * big actions first, numbered plain-English story, tech details optional.
+ * Quick-scan case study: title, short summary, visual, feature labels,
+ * and one contribution line up front. Technical detail lives in <details>.
  * Renders every entry in `projects` so a second project needs no layout changes.
  */
 export default function Work() {
@@ -74,7 +67,7 @@ export default function Work() {
                 target="_blank"
                 rel="noreferrer"
               >
-                See my live build
+                See Dhyaan
                 <span className="arrow" aria-hidden="true">
                   →
                 </span>
@@ -82,97 +75,74 @@ export default function Work() {
             ) : (
               <span className="case-live-soon">Live view — coming soon</span>
             )}
-            {/* Repo URL user-provided 2026-10-11; returned 404 on last check. */}
-            <a
-              className="btn btn-secondary"
-              href={p.repoUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              See the code
-            </a>
+            {p.repoUrl ? (
+              <a
+                className="btn btn-secondary"
+                href={p.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                See the code
+              </a>
+            ) : (
+              <span className="case-live-soon">Code — not public right now</span>
+            )}
           </div>
 
-          <div className="plain-grid">
-            <div className="plain-steps">
-              <div className="plain-step">
-                <span className="plain-num" aria-hidden="true">
-                  1
-                </span>
-                <div>
-                  <h3>The problem</h3>
-                  <p>{p.problem}</p>
-                </div>
-              </div>
-              <div className="plain-step">
-                <span className="plain-num" aria-hidden="true">
-                  2
-                </span>
-                <div>
-                  <h3>What it does for me</h3>
-                  <p>{p.audience}</p>
-                  <p>{p.solution}</p>
-                </div>
-              </div>
-              <div className="plain-step">
-                <span className="plain-num" aria-hidden="true">
-                  3
-                </span>
-                <div>
-                  <h3>My part</h3>
-                  <p>{p.role}</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <figure className="preview">
-                <div
-                  className="preview-frame"
-                  onPointerMove={onTilt}
-                  onPointerLeave={onUntilt}
-                  aria-hidden="true"
-                >
-                  <div className="preview-screen">
-                    <div className="preview-bar">
-                      <span>Dhyaan · Today</span>
-                      <span className="preview-dot" />
-                    </div>
-                    <div className="preview-task">
-                      <span className="preview-box done" />
-                      <s>Maths assignment ch.3</s>
-                      <span className="preview-tag">Done</span>
-                    </div>
-                    <div className="preview-task">
-                      <span className="preview-box" />
-                      <span>Physics lab record</span>
-                      <span className="preview-tag">Today</span>
-                    </div>
-                    <div className="preview-task">
-                      <span className="preview-box" />
-                      <span>Revise ML notes</span>
-                      <span className="preview-tag">Area</span>
-                    </div>
-                  </div>
-                </div>
-                <figcaption className="preview-caption">
-                  A mock-up, not a screenshot — my personal build is linked above
-                </figcaption>
-              </figure>
-
-              <Tilt className="try-box" max={5} glare={false}>
-                <h3>Look at it in 30 seconds</h3>
-                <ol>
-                  {TRY_STEPS.map((step) => (
-                    <li key={step.slice(0, 20)}>{step}</li>
-                  ))}
-                </ol>
-              </Tilt>
-
-              <p className="stage-note" style={{ marginTop: "1.25rem" }}>
-                <strong>Honest status:</strong> {p.stageNote}
+          <div className="case-summary-grid">
+            <div className="case-summary">
+              <p className="case-why">
+                <strong>Why:</strong> {p.problem}
+              </p>
+              <p className="case-why">
+                <strong>What:</strong> {p.solution}
+              </p>
+              <ul className="feature-list" aria-label="Key features">
+                {p.features.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+              <p className="case-role">
+                <strong>My contribution:</strong> {p.role}
+              </p>
+              <p className="case-learning">
+                <strong>Key learning:</strong> {p.learning}
               </p>
             </div>
+
+            <figure className="preview">
+              <div
+                className="preview-frame"
+                onPointerMove={onTilt}
+                onPointerLeave={onUntilt}
+                aria-hidden="true"
+              >
+                <div className="preview-screen">
+                  <div className="preview-bar">
+                    <span>Dhyaan · Today</span>
+                    <span className="preview-dot" />
+                  </div>
+                  <div className="preview-task">
+                    <span className="preview-box done" />
+                    <s>Maths assignment ch.3</s>
+                    <span className="preview-tag">Done</span>
+                  </div>
+                  <div className="preview-task">
+                    <span className="preview-box" />
+                    <span>Physics lab record</span>
+                    <span className="preview-tag">Today</span>
+                  </div>
+                  <div className="preview-task">
+                    <span className="preview-box" />
+                    <span>Revise ML notes</span>
+                    <span className="preview-tag">Area</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="preview-caption">
+                A mock-up, not a screenshot — my personal build is linked above
+              </figcaption>
+            </figure>
           </div>
 
           <details className="case-details">
@@ -192,12 +162,14 @@ export default function Work() {
                   <li key={d}>{d}</li>
                 ))}
               </ul>
-              <h3 className="details-label">What it taught me</h3>
+              <h3 className="details-label">What I learned</h3>
               <ul className="details-list">
                 {p.lessons.map((l) => (
                   <li key={l}>{l}</li>
                 ))}
               </ul>
+              <h3 className="details-label">About the demo</h3>
+              <p className="details-note">{p.stageNote}</p>
             </div>
           </details>
         </article>

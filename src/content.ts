@@ -4,20 +4,21 @@
  *
  * Honesty rules (do not break these):
  * - No invented jobs, clients, metrics, revenue, testimonials, or awards.
- * - Dhyaan is a PERSONAL build for my own use + a learning experiment in
- *   how AI creates software. Do not frame it as a product for users/students.
- *   Do not claim users, validation, or "students like me" as the audience.
- *   The live link is view-only proof ("look at my build"), not onboarding.
- * - Links must work. The Dhyaan repo URL below returned 404 at last check
- *   (repo may be private or unpushed) — verify before sharing widely.
- * - Live Dhyaan deployment verified 2026-10-11:
- *   https://dhyaan.rhsunasara429.workers.dev (spelling "rhsunasara", matches GitHub).
+ * - Dhyaan is a PERSONAL project for my own college routine. Do not frame
+ *   it as a launched product, and do not claim users, traction, or demand.
+ *   The live link opens a view-only copy (localStorage demo in the
+ *   visitor's own browser), not onboarding.
+ * - Dhyaan repo is NOT public (github.com/rhsunasara429/Dhyaan → 404,
+ *   verified 2026-10-12). repoUrl stays null until a public repo exists.
+ * - Live Dhyaan deployment verified reachable 2026-10-12:
+ *   https://dhyaan.rhsunasara429.workers.dev (JS SPA + web manifest).
+ * - Each section adds something new. Do not restate the same idea twice.
  */
 
 export const profile = {
   name: "Rashidali",
   wordmark: "Rashidali",
-  eyebrow: "Developer × Aspiring Founder",
+  eyebrow: "B.Tech CSE (AI/ML) · Ahmedabad",
   location: "Ahmedabad, IN",
   college: "SAL Institute of Technology and Engineering Research",
   degree: "B.Tech, Computer Science (AI/ML) — First year",
@@ -29,39 +30,38 @@ export const profile = {
 } as const;
 
 export const hero = {
-  titleA: "CS student by day,",
-  titleB: "product builder by night.",
+  titleA: "Learning software",
+  titleB: "by building things I need.",
   typedRoles: [
-    "built Dhyaan — a personal task tool I use myself",
-    "learning how AI actually turns ideas into software",
-    "learning AI/ML from the maths up",
-    "studying how software becomes a business",
+    "First-year B.Tech CSE (AI/ML) at SAL, Ahmedabad",
+    "Built Dhyaan for my college routine",
+    "Strengthening CS fundamentals",
   ],
   standfirst:
-    "I'm Rashidali, a first-year CS student who learns by building for himself. Dhyaan is my personal task-capture tool — I built it for my own college life, and to learn first-hand how AI creates software. I directed every decision; the AI helped me execute it.",
-  primaryCta: { label: "See My Personal Build", href: "#work" },
-  secondaryCta: { label: "The Bet I'm Making", href: "#bet" },
-  meta: ["Based in Ahmedabad", "Built Dhyaan for myself", "Learning how AI builds software"],
+    "I'm Rashidali, a first-year CS student. I built Dhyaan after finding it difficult to keep track of college tasks scattered across chats, notes, and memory. I used an AI coding agent to help implement it. My work involved defining what the app should do, reviewing changes, testing the result, and correcting problems along the way.",
+  primaryCta: { label: "See Dhyaan", href: "#work" },
+  secondaryCta: { label: "About me", href: "#about" },
+  meta: ["Based in Ahmedabad", "First-year B.Tech CSE (AI/ML)", "Built Dhyaan for my routine"],
 } as const;
 
 export const ticker = [
-  "Problem-first",
-  "AI-assisted",
-  "Learning in public",
-  "React",
-  "TypeScript",
-  "Founder path",
-  "Built Dhyaan for myself",
-  "CS fundamentals",
+  "B.Tech CSE (AI/ML)",
+  "Ahmedabad",
+  "Dhyaan — task capture",
+  "React + TypeScript",
+  "Local-first",
+  "Installable PWA",
 ] as const;
 
+/** A single principle, stated once. Do not repeat it elsewhere. */
 export const manifesto = {
   lines: [
-    { text: "Most students learn to code.", dim: false },
-    { text: "I'm learning to find problems", dim: false },
-    { text: "worth coding about.", dim: true },
+    {
+      text: "Before I ask AI to build something, I want to understand why it should exist.",
+      dim: false,
+    },
   ],
-  tag: "The bet — skills compound, products teach, users decide",
+  tag: "A principle I work by",
 } as const;
 
 export interface Project {
@@ -71,15 +71,18 @@ export interface Project {
   status: string;
   stageNote: string;
   problem: string;
-  audience: string;
   solution: string;
   role: string;
+  /** One-line takeaway shown in the quick-scan summary. */
+  learning: string;
+  /** Max three short labels for the quick-scan summary. */
+  features: readonly string[];
   stack: string[];
   decisions: string[];
   lessons: string[];
-  /** User-provided 2026-10-11. Returned HTTP 404 on last check — repo may be private. */
-  repoUrl: string;
-  /** Live deployment — verified reachable 2026-10-11. Null until one exists. */
+  /** Null while the repo is not public (Dhyaan → 404, verified 2026-10-12). */
+  repoUrl: string | null;
+  /** Live deployment — verified reachable 2026-10-12. Null until one exists. */
   liveUrl: string | null;
 }
 
@@ -88,140 +91,63 @@ export const projects: Project[] = [
   {
     no: "No. 01",
     name: "Dhyaan",
-    tagline: "My personal task-capture tool — built for my own college life, and as a hands-on way to learn how AI creates software.",
-    status: "Personal build · Ongoing",
+    tagline: "A task-capture app for my college routine.",
+    status: "Personal project · Ongoing",
     stageNote:
-      "This is not a product for users. I built it for myself and I use it myself. The live link is just so you can look at my build — not a launch.",
+      "A personal project for my own routine. The live link opens a view-only copy so you can look at the build — anything you type saves only in your own browser.",
     problem:
-      "My own college tasks were scattered — notebooks, group chats, memory. I kept forgetting things, so I wanted one fast place of my own to dump a task in seconds and trust it would still be there later.",
-    audience:
-      "I made it only for me: someone rushing between classes who wants to note something down in seconds and check it off the same day. Nobody else needs to use it for it to be successful.",
-    solution:
-      "I open my app, type the task, and get on with my day. I added a subject and due date because I personally need them, a tick-off flow I like, and one gentle evening reminder about what's left — tuned exactly how I want it.",
-    role: "I designed and directed the whole thing, with an AI coding assistant writing code alongside me. Every decision was mine, I reviewed and understood all of it — and that process taught me how AI actually turns an idea into working software: specifying, iterating, debugging, and knowing when to correct it.",
+      "College tasks were scattered across chats, notebooks, and memory.",
+    solution: "One simple place to capture tasks and keep track of them.",
+    role: "I used an AI coding agent to help implement the app, defining requirements, reviewing changes, testing behaviour, and iterating on problems.",
+    learning:
+      "AI can generate code. Building something useful still requires clear decisions and testing.",
+    features: ["Quick task capture", "Optional due dates", "Offline, mobile-friendly"] as const,
     stack: ["React", "TypeScript", "Vite", "Plain CSS", "localStorage", "PWA"],
     decisions: [
-      "My tasks are saved in my own browser — so my app works offline between classes, with no account and no server to maintain.",
-      "Adding a task takes seconds: one box, one tap. I built that speed for myself because that's the whole point.",
-      "No server by design: it's an installable phone app for my personal use, instead of backend systems I don't need for one user — me.",
-      "When I add new features, my previously saved tasks keep working — nothing gets wiped.",
+      "Tasks save in the browser's local storage — no account or server, and it works offline.",
+      "Adding a task is one box and one tap, because capture speed is the point.",
+      "No backend: one user (me) doesn't need server infrastructure.",
+      "Saved tasks survive app updates — new features don't wipe what's there.",
     ],
     lessons: [
-      "I learned how AI actually builds software: I specify the idea, it drafts the code, I review, correct, and re-prompt until it matches what I meant.",
-      "The evening reminder can't ring like an alarm when my app is closed — so it honestly catches up the next time I open it.",
-      "A little celebration feels good once; every single time feels noisy. I tuned big moments for my own milestones only.",
-      "Building for reduced motion taught me accessibility shapes real code — that change came from testing the app on myself.",
+      "Generated code still needs reviewing — I caught behaviour that didn't match what I asked for only by testing it myself.",
+      "Features need clearly defined expected behaviour before asking for them; vague requests came back vague.",
+      "Small changes are easier to validate — one fix at a time kept testing manageable.",
     ],
-    repoUrl: "https://github.com/rhsunasara429/Dhyaan",
+    repoUrl: null,
     liveUrl: "https://dhyaan.rhsunasara429.workers.dev",
   },
 ];
 
 export const about = {
-  heading: "A builder learning in public.",
+  heading: "I'm early in the journey, and that's the point.",
   paragraphs: [
-    "I'm in my first year of a computer science degree, specialising in AI and machine learning — and most of my real education so far has come from building things for myself.",
-    "My rule is simple: understand the problem before writing code. I sketch the solution, reason about trade-offs, then use AI tools to execute faster. The thinking stays mine; the assistant handles the typing — and reviewing its work taught me how AI actually creates software.",
-    "Alongside the engineering, I'm studying how software becomes a sustainable product — how founders spot problems, validate before they scale, and turn tools into businesses. Dhyaan is separate from that: it's my personal tool that I use daily, and the hands-on experiment where I learned the AI-assisted workflow.",
+    "I'm a first-year B.Tech student specialising in Computer Science and AI/ML at SAL Institute in Ahmedabad.",
+    "I'm strengthening my programming and computer science fundamentals while using personal projects to put what I learn into practice.",
+    "I enjoy working with AI coding tools, but I don't want to blindly accept what they produce. I want to improve at defining problems, making technical decisions, reviewing code, and understanding why something does not work.",
+    "Longer term, I want to build useful software and understand the business around it: how to find problems that matter, test assumptions, and earn people's trust.",
   ],
 } as const;
 
-export const explorations = {
-  heading: "What I'm exploring",
-  note: "Active learning areas — not mastered skills. Each one feeds the founder path.",
-  items: [
-    {
-      title: "Software engineering & app development",
-      detail: "Fundamentals first: how real applications are structured, tested, and shipped.",
-    },
-    {
-      title: "Artificial intelligence & machine learning",
-      detail: "My degree specialisation — currently the maths and foundations, not applied claims.",
-    },
-    {
-      title: "AI-assisted development workflows",
-      detail: "Using coding agents well: specifying, reviewing, and staying responsible for the output.",
-    },
-    {
-      title: "SaaS & entrepreneurship",
-      detail: "How useful software becomes a business — pricing, positioning, and patience.",
-    },
-    {
-      title: "Problem discovery & validation",
-      detail: "Finding recurring problems worth solving before committing to a solution.",
-    },
-  ],
-} as const;
-
-/** Update freely as priorities change. Keep entries dated and plain. */
+/** One compact focus list. Not a skills list — no mastery claims. */
 export const now = {
-  heading: "Now",
+  heading: "Current focus",
   updated: "October 2026",
   items: [
     "Strengthening CS and software engineering fundamentals alongside my degree.",
-    "Using Dhyaan daily — my personal task tool — and polishing it for myself while studying what the AI-assisted build taught me.",
-    "Learning how AI creates software: specifying, reviewing, debugging, and staying responsible for the output.",
-    "Exploring how useful software becomes a sustainable product — separate from Dhyaan, which stays personal.",
+    "Practising how to plan, review, test, and debug applications built with AI coding agents.",
+    "Learning problem discovery and product validation — how useful software becomes a sustainable business.",
   ],
 } as const;
 
 export const contact = {
-  heading: "Have a problem worth solving?",
-  body: "The fastest way to reach me is email. Student-built software, AI-assisted workflows, startup ideas, or a problem you think deserves a better tool — I reply to thoughtful mail.",
+  heading: "Have a problem worth thinking through?",
+  body: "I'm happy to hear from students, builders, and people working on interesting problems. Reach out about something you're building, an idea you're exploring, or a problem that deserves a better solution.",
 } as const;
 
 export const nav = [
   { label: "Work", href: "#work" },
-  { label: "Bet", href: "#bet" },
-  { label: "Path", href: "#journey" },
   { label: "About", href: "#about" },
-  { label: "Now", href: "#now" },
+  { label: "Focus", href: "#now" },
   { label: "Contact", href: "#contact" },
 ] as const;
-
-/** Honest timeline — only things that verifiably happened, year precision. */
-export const journey = {
-  heading: "The path so far",
-  note: "No fake jobs, no inflated titles — just what's actually happened.",
-  steps: [
-    {
-      when: "2026",
-      state: "Done",
-      title: "Started CS (AI/ML)",
-      detail:
-        "First-year B.Tech at SAL, Ahmedabad. Chose the degree — and started learning how computers really work.",
-    },
-    {
-      when: "Oct 2026",
-      state: "Done",
-      title: "Designed & built Dhyaan for myself",
-      detail:
-        "A personal task-capture tool I use daily, built with an AI coding assistant. Deployed to Cloudflare so anyone can look at my build — not a product launch.",
-    },
-    {
-      when: "Now",
-      state: "Now",
-      title: "Learning how AI builds software",
-      detail:
-        "Studying my own build: what the AI did well, where I had to correct it, and how specifying + reviewing turns an idea into working code.",
-    },
-    {
-      when: "Next",
-      state: "Next",
-      title: "Keep building for myself, keep studying founders",
-      detail:
-        "More personal builds to sharpen the craft — and separately, studying how real products get validated and become businesses.",
-    },
-  ],
-} as const;
-
-export const vision = {
-  heading: "A letter to the future",
-  body: [
-    "I'm in my first year of CS, writing this from Ahmedabad — and most of what I know about software so far comes from one small frustration: I kept forgetting my own tasks, so I built myself a tool that wouldn't let me.",
-    "That tool is Dhyaan. It's not a startup and it's not for the world — it's the app I open every day between classes. Building it gave me two rules I now work by: understand the problem before you write code, and respect the person's attention after you do. Mine captures a thought in seconds and gets out of the way.",
-    "I want to become a builder who finds problems worth solving, not just someone who can code answers. So I'm doing both tracks at once: CS fundamentals by day, and learning how AI actually turns ideas into software by night — by directing it, reviewing it, correcting it, and staying responsible for what it ships.",
-    "If that path interests you — student, builder, or just curious about honest building — my inbox is open. I reply to thoughtful mail.",
-  ],
-  sign: "— Rashidali · Ahmedabad, October 2026",
-} as const;

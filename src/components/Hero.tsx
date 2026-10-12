@@ -109,11 +109,7 @@ export default function Hero() {
               <span className="caret" aria-hidden="true" />
             )}
           </p>
-          <p className="hero-standfirst">
-            I&apos;m <strong>Rashidali</strong>, a first-year CS student who learns by
-            building for himself. Dhyaan is my personal task tool — I use it daily,
-            and building it with AI taught me how AI actually creates software.
-          </p>
+          <p className="hero-standfirst">{hero.standfirst}</p>
           <div className="hero-ctas">
             <MagneticLink className="btn btn-primary" href={hero.primaryCta.href}>
               {hero.primaryCta.label}

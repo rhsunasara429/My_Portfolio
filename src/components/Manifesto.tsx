@@ -4,7 +4,7 @@ export default function Manifesto() {
   return (
     <div className="manifesto">
       <p className="eyebrow" style={{ justifyContent: "center" }}>
-        The Bet
+        Principle
       </p>
       <p className="manifesto-big">
         {manifesto.lines.map((line, i) => (

@@ -2,7 +2,7 @@ import { contact, profile } from "../content";
 
 /** Renders the gradient accent on the closing phrase of the heading. */
 function AccentHeading({ text }: { text: string }) {
-  const phrase = "worth solving?";
+  const phrase = "worth thinking through?";
   const i = text.indexOf(phrase);
   if (i === -1) return <>{text}</>;
   return (

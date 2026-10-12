@@ -29,7 +29,7 @@ export default function Footer() {
               <a href={`mailto:${profile.email}`}>Email</a>
             </li>
           </ul>
-          <span>Building in public — CS, software, and the founder&apos;s path.</span>
+          <span>© 2026 Rashidali · Ahmedabad</span>
         </div>
       </div>
     </footer>
