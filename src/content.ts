@@ -218,9 +218,10 @@ export const journey = {
 export const vision = {
   heading: "A letter to the future",
   body: [
-    "I don't know which problem I'll spend my career on yet. That's an honest sentence, and I'd rather write it than a grand one.",
-    "But I have a hunch: the best software respects people's attention instead of harvesting it. Dhyaan is my personal proof of that — a small tool I built for myself that captures a thought in seconds and gets out of my way. Building it taught me how AI actually turns an idea into working software.",
-    "If you're a student, a builder, or someone curious about AI-assisted building — let's talk. The future gets built by people who start before they feel ready.",
+    "I'm in my first year of CS, writing this from Ahmedabad — and most of what I know about software so far comes from one small frustration: I kept forgetting my own tasks, so I built myself a tool that wouldn't let me.",
+    "That tool is Dhyaan. It's not a startup and it's not for the world — it's the app I open every day between classes. Building it gave me two rules I now work by: understand the problem before you write code, and respect the person's attention after you do. Mine captures a thought in seconds and gets out of the way.",
+    "I want to become a builder who finds problems worth solving, not just someone who can code answers. So I'm doing both tracks at once: CS fundamentals by day, and learning how AI actually turns ideas into software by night — by directing it, reviewing it, correcting it, and staying responsible for what it ships.",
+    "If that path interests you — student, builder, or just curious about honest building — my inbox is open. I reply to thoughtful mail.",
   ],
-  sign: "— Rashidali, October 2026",
+  sign: "— Rashidali · Ahmedabad, October 2026",
 } as const;

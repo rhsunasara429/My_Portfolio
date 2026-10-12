@@ -445,12 +445,18 @@ img, svg { display: block; max-width: 100%; }
 }
 .marquee-track {
   display: flex;
-  gap: 2.5rem;
+  align-items: center;
+  flex-wrap: nowrap;
   width: max-content;
   animation: marquee 28s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+  flex-shrink: 0;
   font-family: var(--mono);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
@@ -458,7 +464,7 @@ img, svg { display: block; max-width: 100%; }
   color: var(--muted);
   white-space: nowrap;
 }
-.marquee-track b { color: var(--accent); font-weight: 500; margin-right: 2.5rem; }
+.marquee-track b { color: var(--accent); font-weight: 500; margin: 0; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ——— Manifesto / founder bet ——— */
@@ -634,8 +640,33 @@ img, svg { display: block; max-width: 100%; }
   flex: none;
   transition: transform 0.2s var(--ease);
 }
+.case-details[open] summary { border-bottom: 1px solid var(--line); }
 .case-details[open] summary::after { transform: rotate(45deg); }
-.case-details .details-body { padding: 0 1.25rem 1.25rem; }
+.case-details .details-body {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+.details-body .details-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+.details-body .details-label:not(:first-child) { margin-top: 0.5rem; }
+.details-body .details-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #d8d4cc;
+  font-size: 0.93rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.details-body .details-list li::marker { color: var(--accent); }
 
 /* Tilt preview (illustrative, not a screenshot) */
 .preview { margin: 0; perspective: 900px; }
@@ -752,7 +783,7 @@ img, svg { display: block; max-width: 100%; }
 .try-box li { margin-bottom: 0.5rem; }
 .try-box li:last-child { margin-bottom: 0; }
 .try-box li::marker { color: var(--accent); }
-.stack-plain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.stack-plain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 
 /* ——— About / Explorations / Now ——— */
 .about-grid {
@@ -1090,7 +1121,9 @@ img, svg { display: block; max-width: 100%; }
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent-2), var(--accent), transparent);
 }
-.letter p { color: #d8d4cc; font-size: 1.05rem; margin-bottom: 1.1rem; }
+.letter p { color: #d8d4cc; font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.1rem; }
+.letter p:last-of-type { margin-bottom: 1.4rem; }
+.letter-lead { color: var(--ink) !important; font-size: 1.15rem !important; line-height: 1.65 !important; }
 .letter-sign {
   font-family: var(--mono);
   font-size: 0.8rem;

@@ -42,20 +42,17 @@ function ScrollProgress() {
 }
 
 function Ticker() {
-  const row = (hidden: boolean) => (
-    <div className="marquee-track" aria-hidden={hidden || undefined}>
-      {ticker.map((item) => (
-        <span key={`${hidden ? "b" : "a"}-${item}`}>
-          {item}
-          <b aria-hidden="true">✦</b>
-        </span>
-      ))}
-    </div>
-  );
+  const doubled = [...ticker, ...ticker];
   return (
     <div className="marquee" role="presentation">
-      {row(false)}
-      {row(true)}
+      <div className="marquee-track">
+        {doubled.map((item, i) => (
+          <span key={`${item}-${i}`} aria-hidden={i >= ticker.length || undefined}>
+            {item}
+            <b aria-hidden="true">✦</b>
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

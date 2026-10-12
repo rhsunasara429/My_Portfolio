@@ -178,7 +178,7 @@ export default function Work() {
           <details className="case-details">
             <summary>How I built it — the nerdy version (optional)</summary>
             <div className="details-body">
-              <h3>Built with</h3>
+              <h3 className="details-label">Built with</h3>
               <ul className="stack-plain">
                 {p.stack.map((t) => (
                   <li key={t} className="stack-chip" title={t}>
@@ -186,14 +186,14 @@ export default function Work() {
                   </li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: "1.25rem" }}>Decisions I made</h3>
-              <ul>
+              <h3 className="details-label">Decisions I made</h3>
+              <ul className="details-list">
                 {p.decisions.map((d) => (
                   <li key={d}>{d}</li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: "1.25rem" }}>What it taught me</h3>
-              <ul>
+              <h3 className="details-label">What it taught me</h3>
+              <ul className="details-list">
                 {p.lessons.map((l) => (
                   <li key={l}>{l}</li>
                 ))}

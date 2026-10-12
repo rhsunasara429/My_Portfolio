@@ -11,8 +11,10 @@ export default function Vision() {
         <h2 className="section-title">{vision.heading}</h2>
       </div>
       <div className="letter">
-        {vision.body.map((para) => (
-          <p key={para.slice(0, 28)}>{para}</p>
+        {vision.body.map((para, i) => (
+          <p key={para.slice(0, 28)} className={i === 0 ? "letter-lead" : undefined}>
+            {para}
+          </p>
         ))}
         <p className="letter-sign">{vision.sign}</p>
       </div>
