@@ -13,9 +13,9 @@ const STACK_PLAIN: Record<string, string> = {
 };
 
 const TRY_STEPS = [
-  "Tap “Try the live app” above — no sign-up, it just opens.",
-  "Add one task, e.g. “Revise chapter 3”.",
-  "Tick it off and watch it celebrate. That's the whole app.",
+  "Open “See my live build” above — no sign-up, it just opens my personal tool.",
+  "Add one task the way I do, e.g. “Revise chapter 3”.",
+  "Tick it off. That's the flow I use daily — you're just looking over my shoulder.",
 ] as const;
 
 /**
@@ -51,7 +51,7 @@ export default function Work() {
           <h2 className="section-title">
             What I&apos;ve <em>built</em> so far.
           </h2>
-          <p className="section-lede">Just one project for now — explained simply.</p>
+          <p className="section-lede">One personal build for now — explained simply.</p>
         </div>
         <p className="work-count">Project 1 of 1 — more coming</p>
       </div>
@@ -74,13 +74,13 @@ export default function Work() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Try the live app
+                See my live build
                 <span className="arrow" aria-hidden="true">
                   →
                 </span>
               </a>
             ) : (
-              <span className="case-live-soon">Live demo — coming soon</span>
+              <span className="case-live-soon">Live view — coming soon</span>
             )}
             {/* Repo URL user-provided 2026-10-11; returned 404 on last check. */}
             <a
@@ -109,7 +109,7 @@ export default function Work() {
                   2
                 </span>
                 <div>
-                  <h3>What the app does</h3>
+                  <h3>What it does for me</h3>
                   <p>{p.audience}</p>
                   <p>{p.solution}</p>
                 </div>
@@ -156,12 +156,12 @@ export default function Work() {
                   </div>
                 </div>
                 <figcaption className="preview-caption">
-                  A mock-up, not a screenshot — the real app is linked above
+                  A mock-up, not a screenshot — my personal build is linked above
                 </figcaption>
               </figure>
 
               <Tilt className="try-box" max={5} glare={false}>
-                <h3>Try it in 30 seconds</h3>
+                <h3>Look at it in 30 seconds</h3>
                 <ol>
                   {TRY_STEPS.map((step) => (
                     <li key={step.slice(0, 20)}>{step}</li>

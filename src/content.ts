@@ -4,7 +4,10 @@
  *
  * Honesty rules (do not break these):
  * - No invented jobs, clients, metrics, revenue, testimonials, or awards.
- * - Dhyaan is "Early-stage / ongoing". Do not claim users or validation.
+ * - Dhyaan is a PERSONAL build for my own use + a learning experiment in
+ *   how AI creates software. Do not frame it as a product for users/students.
+ *   Do not claim users, validation, or "students like me" as the audience.
+ *   The live link is view-only proof ("look at my build"), not onboarding.
  * - Links must work. The Dhyaan repo URL below returned 404 at last check
  *   (repo may be private or unpushed) — verify before sharing widely.
  * - Live Dhyaan deployment verified 2026-10-11:
@@ -29,16 +32,16 @@ export const hero = {
   titleA: "CS student by day,",
   titleB: "product builder by night.",
   typedRoles: [
-    "shipping Dhyaan, a task-capture app for students",
+    "built Dhyaan — a personal task tool I use myself",
+    "learning how AI actually turns ideas into software",
     "learning AI/ML from the maths up",
     "studying how software becomes a business",
-    "looking for problems worth solving",
   ],
   standfirst:
-    "I'm Rashidali, a first-year CS student who thinks like a founder: find a real problem, reason about the solution, then build. I use AI coding tools to move fast — but the thinking stays mine.",
-  primaryCta: { label: "See What I'm Building", href: "#work" },
+    "I'm Rashidali, a first-year CS student who learns by building for himself. Dhyaan is my personal task-capture tool — I built it for my own college life, and to learn first-hand how AI creates software. I directed every decision; the AI helped me execute it.",
+  primaryCta: { label: "See My Personal Build", href: "#work" },
   secondaryCta: { label: "The Bet I'm Making", href: "#bet" },
-  meta: ["Based in Ahmedabad", "Building Dhyaan", "Open to ideas"],
+  meta: ["Based in Ahmedabad", "Built Dhyaan for myself", "Learning how AI builds software"],
 } as const;
 
 export const ticker = [
@@ -48,7 +51,7 @@ export const ticker = [
   "React",
   "TypeScript",
   "Founder path",
-  "Shipping Dhyaan",
+  "Built Dhyaan for myself",
   "CS fundamentals",
 ] as const;
 
@@ -85,28 +88,29 @@ export const projects: Project[] = [
   {
     no: "No. 01",
     name: "Dhyaan",
-    tagline: "A simple app for noting down college tasks in seconds — and finishing them the same day.",
-    status: "Work in progress",
+    tagline: "My personal task-capture tool — built for my own college life, and as a hands-on way to learn how AI creates software.",
+    status: "Personal build · Ongoing",
     stageNote:
-      "A working demo I'm still improving. No real students have tested it yet, so I make no claims about users.",
+      "This is not a product for users. I built it for myself and I use it myself. The live link is just so you can look at my build — not a launch.",
     problem:
-      "In college, homework and reminders live everywhere — notebooks, group chats, memory. Things get forgotten.",
+      "My own college tasks were scattered — notebooks, group chats, memory. I kept forgetting things, so I wanted one fast place of my own to dump a task in seconds and trust it would still be there later.",
     audience:
-      "It's for students like me: people rushing between classes who need to note something down in seconds and trust it'll still be there later.",
+      "I made it only for me: someone rushing between classes who wants to note something down in seconds and check it off the same day. Nobody else needs to use it for it to be successful.",
     solution:
-      "Open the app, type the task, get on with your day. Add a subject or a due date if you like, tick tasks off as you finish, and get one gentle evening reminder about what's left.",
-    role: "I built it myself, with an AI coding assistant helping me write the code. Every decision was mine, and I understand how all of it works.",
+      "I open my app, type the task, and get on with my day. I added a subject and due date because I personally need them, a tick-off flow I like, and one gentle evening reminder about what's left — tuned exactly how I want it.",
+    role: "I designed and directed the whole thing, with an AI coding assistant writing code alongside me. Every decision was mine, I reviewed and understood all of it — and that process taught me how AI actually turns an idea into working software: specifying, iterating, debugging, and knowing when to correct it.",
     stack: ["React", "TypeScript", "Vite", "Plain CSS", "localStorage", "PWA"],
     decisions: [
-      "Your tasks are saved in your own browser — so the app works offline between classes, with no account and no server.",
-      "Adding a task takes seconds: one box, one tap. That speed is the whole point.",
-      "No server by design: it's an installable phone app instead of backend systems I'm not ready to run yet.",
-      "When I add new features, previously saved tasks keep working — nothing gets wiped.",
+      "My tasks are saved in my own browser — so my app works offline between classes, with no account and no server to maintain.",
+      "Adding a task takes seconds: one box, one tap. I built that speed for myself because that's the whole point.",
+      "No server by design: it's an installable phone app for my personal use, instead of backend systems I don't need for one user — me.",
+      "When I add new features, my previously saved tasks keep working — nothing gets wiped.",
     ],
     lessons: [
-      "The evening reminder can't ring like an alarm when the app is closed — so it honestly catches up the next time you open it.",
-      "A little celebration feels good once; every single time feels noisy. Big moments are saved for milestones.",
-      "Designing for people who prefer less motion changed how the app's animations were built — accessibility shapes real code.",
+      "I learned how AI actually builds software: I specify the idea, it drafts the code, I review, correct, and re-prompt until it matches what I meant.",
+      "The evening reminder can't ring like an alarm when my app is closed — so it honestly catches up the next time I open it.",
+      "A little celebration feels good once; every single time feels noisy. I tuned big moments for my own milestones only.",
+      "Building for reduced motion taught me accessibility shapes real code — that change came from testing the app on myself.",
     ],
     repoUrl: "https://github.com/rhsunasara429/Dhyaan",
     liveUrl: "https://dhyaan.rhsunasara429.workers.dev",
@@ -116,9 +120,9 @@ export const projects: Project[] = [
 export const about = {
   heading: "A builder learning in public.",
   paragraphs: [
-    "I'm in my first year of a computer science degree, specialising in AI and machine learning — and most of my real education so far has come from building things.",
-    "My rule is simple: understand the problem before writing code. I sketch the solution, reason about trade-offs, then use AI tools to execute faster. The thinking stays mine; the assistant handles the typing.",
-    "Alongside the engineering, I'm studying how software becomes a sustainable product — talking to potential users, testing whether a problem is real, and learning how founders validate before they scale. Dhyaan is where I practise all of it.",
+    "I'm in my first year of a computer science degree, specialising in AI and machine learning — and most of my real education so far has come from building things for myself.",
+    "My rule is simple: understand the problem before writing code. I sketch the solution, reason about trade-offs, then use AI tools to execute faster. The thinking stays mine; the assistant handles the typing — and reviewing its work taught me how AI actually creates software.",
+    "Alongside the engineering, I'm studying how software becomes a sustainable product — how founders spot problems, validate before they scale, and turn tools into businesses. Dhyaan is separate from that: it's my personal tool that I use daily, and the hands-on experiment where I learned the AI-assisted workflow.",
   ],
 } as const;
 
@@ -155,9 +159,9 @@ export const now = {
   updated: "October 2026",
   items: [
     "Strengthening CS and software engineering fundamentals alongside my degree.",
-    "Building and improving Dhyaan — capture flow, reliability, and small polish.",
-    "Learning to investigate real user problems instead of assuming them.",
-    "Exploring how useful software becomes a sustainable product.",
+    "Using Dhyaan daily — my personal task tool — and polishing it for myself while studying what the AI-assisted build taught me.",
+    "Learning how AI creates software: specifying, reviewing, debugging, and staying responsible for the output.",
+    "Exploring how useful software becomes a sustainable product — separate from Dhyaan, which stays personal.",
   ],
 } as const;
 
@@ -190,23 +194,23 @@ export const journey = {
     {
       when: "Oct 2026",
       state: "Done",
-      title: "Designed, built & shipped Dhyaan",
+      title: "Designed & built Dhyaan for myself",
       detail:
-        "A working task-capture app, built with AI assistance and deployed to Cloudflare where anyone can try it.",
+        "A personal task-capture tool I use daily, built with an AI coding assistant. Deployed to Cloudflare so anyone can look at my build — not a product launch.",
     },
     {
       when: "Now",
       state: "Now",
-      title: "Validating the problem",
+      title: "Learning how AI builds software",
       detail:
-        "Talking to students and watching what they actually do — learning whether the problem is real before adding features.",
+        "Studying my own build: what the AI did well, where I had to correct it, and how specifying + reviewing turns an idea into working code.",
     },
     {
       when: "Next",
       state: "Next",
-      title: "Whatever survives contact with users",
+      title: "Keep building for myself, keep studying founders",
       detail:
-        "The version real students actually use becomes Dhyaan v1. The users decide, not me.",
+        "More personal builds to sharpen the craft — and separately, studying how real products get validated and become businesses.",
     },
   ],
 } as const;
@@ -215,8 +219,8 @@ export const vision = {
   heading: "A letter to the future",
   body: [
     "I don't know which problem I'll spend my career on yet. That's an honest sentence, and I'd rather write it than a grand one.",
-    "But I have a hunch: the best software respects people's attention instead of harvesting it. Dhyaan is a tiny bet in that direction — a tool that captures a thought in seconds and gets out of your way.",
-    "If you're a student, a builder, or someone with a problem that deserves a better tool — let's talk. The future gets built by people who start before they feel ready.",
+    "But I have a hunch: the best software respects people's attention instead of harvesting it. Dhyaan is my personal proof of that — a small tool I built for myself that captures a thought in seconds and gets out of my way. Building it taught me how AI actually turns an idea into working software.",
+    "If you're a student, a builder, or someone curious about AI-assisted building — let's talk. The future gets built by people who start before they feel ready.",
   ],
   sign: "— Rashidali, October 2026",
 } as const;
