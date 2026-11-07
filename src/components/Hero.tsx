@@ -150,7 +150,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="wrap">
-        <a className="scroll-hint" href="#work">
+        <a className="scroll-hint" href="#journey">
           Scroll
         </a>
       </div>

@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { contact, profile } from "../content";
+import ContactForm from "./ContactForm";
 
 /** Renders the gradient accent on the closing phrase of the heading. */
 function AccentHeading({ text }: { text: string }) {
@@ -14,6 +16,8 @@ function AccentHeading({ text }: { text: string }) {
 }
 
 export default function Contact() {
+  const [formOpen, setFormOpen] = useState(false);
+
   return (
     <>
       <p className="eyebrow">Contact</p>
@@ -22,16 +26,21 @@ export default function Contact() {
       </h2>
       <p className="contact-body">{contact.body}</p>
       <div className="contact-links">
-        <a className="contact-row" href={`mailto:${profile.email}`}>
+        <button
+          type="button"
+          className="contact-row contact-row-btn"
+          onClick={() => setFormOpen(true)}
+          aria-haspopup="dialog"
+        >
           <span>
-            <span className="contact-label">Email — fastest</span>
+            <span className="contact-label">Email — send a message</span>
             <br />
             <span className="contact-value">{profile.email}</span>
           </span>
           <span className="contact-arrow" aria-hidden="true">
             →
           </span>
-        </a>
+        </button>
         <a
           className="contact-row"
           href={profile.linkedin}
@@ -63,6 +72,7 @@ export default function Contact() {
           </span>
         </a>
       </div>
+      <ContactForm open={formOpen} onClose={() => setFormOpen(false)} />
     </>
   );
 }

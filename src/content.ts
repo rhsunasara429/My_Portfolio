@@ -53,6 +53,52 @@ export const ticker = [
   "Installable PWA",
 ] as const;
 
+export interface FilmChapter {
+  no: string;
+  label: string;
+  title: string;
+  body: string;
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}
+
+/**
+ * Pinned scroll film: a four-chapter journey story scrubbed by scrolling.
+ * Keep chapter copy short — it is displayed over a moving canvas scene.
+ */
+export const film: { tag: string; hint: string; chapters: FilmChapter[] } = {
+  tag: "A short scroll film — four chapters",
+  hint: "Scroll to play",
+  chapters: [
+    {
+      no: "01",
+      label: "Origin",
+      title: "Hi, I'm Rashidali.",
+      body: "First-year B.Tech CSE (AI/ML) student in Ahmedabad, learning software by building things I need.",
+    },
+    {
+      no: "02",
+      label: "Learning",
+      title: "Learning the fundamentals, one build at a time.",
+      body: "Strengthening CS fundamentals and putting them into practice with personal projects.",
+    },
+    {
+      no: "03",
+      label: "Building",
+      title: "So I built Dhyaan.",
+      body: "A simple task-capture app for my own college routine — planned, tested and corrected with an AI coding agent.",
+    },
+    {
+      no: "04",
+      label: "Next",
+      title: "Still early. Still building.",
+      body: "The next chapter is unwritten. For now, see what I've built and what I'm focused on.",
+      primary: { label: "See my work", href: "#work" },
+      secondary: { label: "Say hello", href: "#contact" },
+    },
+  ],
+};
+
 /** A single principle, stated once. Do not repeat it elsewhere. */
 export const manifesto = {
   lines: [
@@ -143,6 +189,36 @@ export const now = {
 export const contact = {
   heading: "Have a problem worth thinking through?",
   body: "I'm happy to hear from students, builders, and people working on interesting problems. Reach out about something you're building, an idea you're exploring, or a problem that deserves a better solution.",
+  form: {
+    /**
+     * Formspree form ID — the part after https://formspree.io/f/ .
+     * Create a free form at https://formspree.io (deliver to rhsunasara429@gmail.com),
+     * then paste the ID here. While empty, the form falls back to opening the
+     * visitor's email app with the message prefilled.
+     */
+    formspreeId: "xzeeqrzg",
+    eyebrow: "Email me",
+    title: "Send a message.",
+    lede: "A few lines are enough. It lands straight in my inbox — no account needed.",
+    name: "Name",
+    email: "Email",
+    message: "Message",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "you@example.com",
+    messagePlaceholder: "What's on your mind?",
+    submit: "Send message",
+    sending: "Sending…",
+    subject: "New message from your portfolio",
+    successTitle: "Message sent.",
+    successBody: "Thanks for reaching out — I'll get back to you as soon as I can.",
+    mailtoTitle: "Almost there.",
+    mailtoBody:
+      "Your email app should have opened with the message ready. Press send there and it's on its way.",
+    error: "That didn't go through. Try again, or email me directly.",
+    direct: "or email me directly",
+    close: "Close contact form",
+    done: "Close",
+  },
 } as const;
 
 export const nav = [

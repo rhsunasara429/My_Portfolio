@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import Cursor from "./components/Cursor";
+import Film from "./components/Film";
 import { ticker } from "./content";
 
 /** Thin progress bar pinned to the very top of the viewport. */
@@ -68,6 +69,7 @@ function App() {
       <main id="main">
         <Hero />
         <Ticker />
+        <Film />
         <Reveal as="section" id="work" className="section">
           <div className="wrap">
             <Work />
